@@ -1,7 +1,10 @@
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import "./globals.css";
+
+import { getClient, graphql } from "@/graphql";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,12 +16,49 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const SettingsQuery = graphql(`
+    query Settings {
+      site {
+        settings {
+          storeName
+        }
+        categoryTree {
+          name
+        }
+      }
+    }
+  `);
+
+  const res = await getClient().query(SettingsQuery, {});
+
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} container mx-auto flex min-h-screen flex-col gap-4 font-sans`}
+        className={`${GeistSans.variable} container mx-auto flex min-h-screen flex-col font-sans`}
       >
+        <nav className="flex items-center justify-between py-6">
+          <Link className="font-bold hover:underline" href="/">
+            {res.data?.site.settings?.storeName}
+          </Link>
+
+          <ul className="flex gap-4">
+            {res.data?.site.categoryTree.map((category: { name: string }) => (
+              <li key={category.name}>
+                <Link className="hover:underline" href="/">
+                  {category.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <main className="flex-1">{children}</main>
+
+        <footer className="flex items-center justify-end pb-12 pt-16">
+          <Link className="text-sm hover:underline" href="/">
+            {res.data?.site.settings?.storeName}
+          </Link>
+        </footer>
       </body>
     </html>
   );
