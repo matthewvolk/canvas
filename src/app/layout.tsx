@@ -23,13 +23,18 @@ export default async function RootLayout({
           storeName
         }
         categoryTree {
+          entityId
           name
         }
       }
     }
   `);
 
-  const res = await getClient().query(SettingsQuery, {});
+  const { data } = await getClient().query(SettingsQuery, {});
+
+  if (!data) {
+    throw new Error(`No data in GQL response for RootLayout`);
+  }
 
   return (
     <html lang="en">
@@ -38,13 +43,16 @@ export default async function RootLayout({
       >
         <nav className="flex items-center justify-between py-6">
           <Link className="font-bold hover:underline" href="/">
-            {res.data?.site.settings?.storeName}
+            {data.site.settings?.storeName}
           </Link>
 
           <ul className="flex gap-4">
-            {res.data?.site.categoryTree.map((category: { name: string }) => (
+            {data.site.categoryTree.map((category) => (
               <li key={category.name}>
-                <Link className="hover:underline" href="/">
+                <Link
+                  className="hover:underline"
+                  href={`/categories/${category.entityId}`}
+                >
                   {category.name}
                 </Link>
               </li>
@@ -56,7 +64,7 @@ export default async function RootLayout({
 
         <footer className="flex items-center justify-end pb-12 pt-16">
           <Link className="text-sm hover:underline" href="/">
-            {res.data?.site.settings?.storeName}
+            {data.site.settings?.storeName}
           </Link>
         </footer>
       </body>
