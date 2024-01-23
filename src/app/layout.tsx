@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import "./globals.css";
 
-import { getClient, graphql } from "@/graphql";
+import { query, graphql } from "@/graphql";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,7 +30,7 @@ export default async function RootLayout({
     }
   `);
 
-  const { data } = await getClient().query(SettingsQuery, {});
+  const { data } = await query(SettingsQuery, {});
 
   if (!data) {
     throw new Error(`No data in GQL response for RootLayout`);

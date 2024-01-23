@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { getClient, graphql } from "@/graphql";
+import { query, graphql } from "@/graphql";
 
 export default async function Product({ params }: { params: { id: string } }) {
   const CategoryProductsQuery = graphql(`
@@ -32,7 +32,7 @@ export default async function Product({ params }: { params: { id: string } }) {
     }
   `);
 
-  const { data } = await getClient().query(CategoryProductsQuery, {
+  const { data } = await query(CategoryProductsQuery, {
     categoryId: parseInt(params.id, 10),
   });
 

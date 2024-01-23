@@ -24,7 +24,7 @@ const makeClient = () => {
   });
 };
 
-export const { getClient } = registerUrql(makeClient);
+export const { query } = registerUrql(makeClient).getClient();
 
 export type { FragmentOf, ResultOf, VariablesOf } from "gql.tada";
 export { readFragment } from "gql.tada";

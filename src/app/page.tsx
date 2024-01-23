@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { graphql } from "@/graphql";
-import { getClient } from "@/graphql";
+import { query } from "@/graphql";
 
 export default async function Home() {
   const ProductsQuery = graphql(`
@@ -29,7 +29,7 @@ export default async function Home() {
     }
   `);
 
-  const res = await getClient().query(ProductsQuery, {});
+  const res = await query(ProductsQuery, {});
 
   return (
     <section className="flex flex-col gap-8">

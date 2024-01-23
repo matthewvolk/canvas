@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { getClient, graphql } from "@/graphql";
+import { query, graphql } from "@/graphql";
 
 export default async function Product({ params }: { params: { id: string } }) {
   const ProductQuery = graphql(`
@@ -43,7 +43,7 @@ export default async function Product({ params }: { params: { id: string } }) {
     }
   `);
 
-  const { data } = await getClient().query(ProductQuery, {
+  const { data } = await query(ProductQuery, {
     id: parseInt(params.id, 10),
   });
 
