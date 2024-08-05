@@ -15,6 +15,16 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "gql.tada/ts-plugin",
+        "schemas": [
+          {
+            "name": "bigcommerce",
+            "schema": "./bigcommerce.graphql",
+            "tadaOutputLocation": "./bigcommerce-graphql.d.ts"
+          }
+        ]
       }
     ],
     "paths": {

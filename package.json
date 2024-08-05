@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate": "node -r dotenv/config scripts/generate.mjs dotenv_config_path=.env.local"
   },
   "dependencies": {
+    "@gql.tada/cli-utils": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "gql.tada": "^1.8.5",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
