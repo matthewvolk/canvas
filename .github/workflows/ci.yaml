@@ -10,6 +10,11 @@ jobs:
   lint-and-typecheck:
     runs-on: ubuntu-latest
 
+    env:
+      BIGCOMMERCE_STORE_HASH: ${{ secrets.BIGCOMMERCE_STORE_HASH }}
+      BIGCOMMERCE_CHANNEL_ID: ${{ secrets.BIGCOMMERCE_CHANNEL_ID }}
+      BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN: ${{ secrets.BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
