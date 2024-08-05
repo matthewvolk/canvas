@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@bigcommerce/catalyst-client':
+    specifier: ^0.5.0
+    version: 0.5.0(graphql@16.9.0)
   '@gql.tada/cli-utils':
     specifier: ^1.6.0
     version: 1.6.0(@0no-co/graphqlsp@1.12.12)(graphql@16.9.0)(typescript@5.5.4)
@@ -97,6 +100,15 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
     dev: true
+
+  /@bigcommerce/catalyst-client@0.5.0(graphql@16.9.0):
+    resolution: {integrity: sha512-vPAmb26wFk2p96ZNOT/wkl2XC46bkg7cbA06a1WnL7ZjVVUVfObrbNQRmC9IS4LPFJzX4OrdIld7iBMxphMQJg==}
+    peerDependencies:
+      graphql: ^16.0.0
+    dependencies:
+      graphql: 16.9.0
+      std-env: 3.7.0
+    dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.57.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -2648,6 +2660,10 @@ packages:
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
+
+  /std-env@3.7.0:
+    resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
+    dev: false
 
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}

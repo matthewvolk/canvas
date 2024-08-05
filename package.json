@@ -11,6 +11,7 @@
     "generate": "node -r dotenv/config scripts/generate.mjs dotenv_config_path=.env.local"
   },
   "dependencies": {
+    "@bigcommerce/catalyst-client": "^0.5.0",
     "@gql.tada/cli-utils": "^1.6.0",
     "dotenv": "^16.4.5",
     "gql.tada": "^1.8.5",
