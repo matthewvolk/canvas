@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate": "node scripts/generate.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,8 +11,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@gql.tada/cli-utils": "^1.6.1",
+    "dotenv": "^16.4.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "gql.tada": "^1.8.6",
     "next": "14.2.6",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",

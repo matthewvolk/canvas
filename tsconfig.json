@@ -15,6 +15,18 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "@0no-co/graphqlsp",
+        "trackFieldUsage": false,
+        "shouldCheckForColocatedFragments": false,
+        "schemas": [
+          {
+            "name": "bigcommerce",
+            "schema": "./src/lib/bigcommerce/bigcommerce.graphql",
+            "tadaOutputLocation": "./src/lib/bigcommerce/bigcommerce-graphql.d.ts"
+          }
+        ]
       }
     ],
     "paths": {

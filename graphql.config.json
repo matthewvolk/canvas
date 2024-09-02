@@ -1,0 +1,4 @@
+{
+  "schema": "src/lib/bigcommerce/bigcommerce.graphql",
+  "documents": ["**/*.ts"]
+}
