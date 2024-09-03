@@ -11,6 +11,13 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "*.bigcommerce.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

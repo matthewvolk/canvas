@@ -20,3 +20,7 @@ export const client = createClient({
   logger: true,
   getChannelId: async (defaultChannelId: string) => defaultChannelId,
 });
+
+export const ONE_MINUTE = 60;
+export const TWO_MINUTES = 120;
+export const THREE_MINUTES = 180;
