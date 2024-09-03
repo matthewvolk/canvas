@@ -14,6 +14,7 @@
     "@bigcommerce/catalyst-client": "^0.14.0",
     "@gql.tada/cli-utils": "^1.6.3",
     "dotenv": "^16.4.7",
+    "@makeswift/runtime": "^0.22.1",
     "gql.tada": "^1.8.10",
     "next": "15.1.4",
     "react": "^19.0.0",

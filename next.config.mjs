@@ -1,3 +1,7 @@
+import createWithMakeswift from "@makeswift/runtime/next/plugin";
+
+const withMakeswift = createWithMakeswift();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -13,4 +17,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withMakeswift(nextConfig);
