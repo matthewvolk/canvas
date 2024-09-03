@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@bigcommerce/catalyst-client':
+        specifier: ^0.7.0
+        version: 0.7.0(graphql@16.9.0)
       '@gql.tada/cli-utils':
         specifier: ^1.6.1
         version: 1.6.1(@0no-co/graphqlsp@1.12.13(graphql@16.9.0)(typescript@5.5.4))(graphql@16.9.0)(typescript@5.5.4)
@@ -83,6 +86,11 @@ packages:
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+
+  '@bigcommerce/catalyst-client@0.7.0':
+    resolution: {integrity: sha512-N8DuQ8ghV4gp9QP9wZ/zKKfAfHNcR8pdiXnV8xnH+9E+1RES/lrmN1/IqP4BR+UoMbSSpFzOblX3zgl3jNkz0Q==}
+    peerDependencies:
+      graphql: ^16.0.0
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -1473,6 +1481,9 @@ packages:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
 
+  std-env@3.7.0:
+    resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
+
   stop-iteration-iterator@1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
     engines: {node: '>= 0.4'}
@@ -1692,6 +1703,11 @@ snapshots:
       typescript: 5.5.4
 
   '@alloc/quick-lru@5.2.0': {}
+
+  '@bigcommerce/catalyst-client@0.7.0(graphql@16.9.0)':
+    dependencies:
+      graphql: 16.9.0
+      std-env: 3.7.0
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.0)':
     dependencies:
@@ -3211,6 +3227,8 @@ snapshots:
   slash@3.0.0: {}
 
   source-map-js@1.2.0: {}
+
+  std-env@3.7.0: {}
 
   stop-iteration-iterator@1.0.0:
     dependencies:
