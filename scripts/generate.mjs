@@ -14,13 +14,12 @@ config({ path: ENV_PATH });
 
 const BIGCOMMERCE_STORE_HASH = process.env.BIGCOMMERCE_STORE_HASH;
 const BIGCOMMERCE_CHANNEL_ID = process.env.BIGCOMMERCE_CHANNEL_ID;
-const BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN =
-  process.env.BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN;
+const BIGCOMMERCE_STOREFRONT_TOKEN = process.env.BIGCOMMERCE_STOREFRONT_TOKEN;
 
 strict(BIGCOMMERCE_STORE_HASH, "BIGCOMMERCE_STORE_HASH is required");
 strict(
-  BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN,
-  "BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN is required",
+  BIGCOMMERCE_STOREFRONT_TOKEN,
+  "BIGCOMMERCE_STOREFRONT_TOKEN is required",
 );
 
 const endpoint = `https://store-${BIGCOMMERCE_STORE_HASH}-${BIGCOMMERCE_CHANNEL_ID}.mybigcommerce.com/graphql`;
@@ -28,7 +27,7 @@ const endpoint = `https://store-${BIGCOMMERCE_STORE_HASH}-${BIGCOMMERCE_CHANNEL_
 await generateSchema({
   input: endpoint,
   headers: {
-    Authorization: `Bearer ${BIGCOMMERCE_CUSTOMER_IMPERSONATION_TOKEN}`,
+    Authorization: `Bearer ${BIGCOMMERCE_STOREFRONT_TOKEN}`,
   },
   output: join(ROOT_DIR, "src/lib/bigcommerce/bigcommerce.graphql"),
   tsconfig: undefined,
