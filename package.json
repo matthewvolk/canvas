@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "generate": "node scripts/generate.mjs",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "pnpm generate && next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0 --file eslint.config.mjs --file next.config.mjs --file postcss.config.mjs --file tailwind.config.ts --dir src --dir scripts",
