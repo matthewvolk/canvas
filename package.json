@@ -6,6 +6,7 @@
     "generate": "node scripts/generate.mjs",
     "dev": "next dev",
     "build": "pnpm generate && next build",
+    "fmt": "prettier --check .",
     "start": "next start",
     "lint": "next lint --max-warnings 0 --file eslint.config.mjs --file next.config.mjs --file postcss.config.mjs --file tailwind.config.ts --dir src --dir scripts",
     "typecheck": "tsc --noEmit"
@@ -15,7 +16,7 @@
     "@gql.tada/cli-utils": "^1.6.3",
     "dotenv": "^16.4.7",
     "gql.tada": "^1.8.10",
-    "next": "15.1.4",
+    "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -25,7 +26,7 @@
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "eslint": "^9.18.0",
-    "eslint-config-next": "15.1.4",
+    "eslint-config-next": "15.3.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
     "postcss": "^8.5.1",
