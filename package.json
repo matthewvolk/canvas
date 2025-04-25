@@ -1,7 +1,7 @@
 {
   "name": "mini-catalyst",
   "private": true,
-  "packageManager": "pnpm@9.8.0",
+  "packageManager": "pnpm@10.9.0",
   "scripts": {
     "generate": "node scripts/generate.mjs",
     "dev": "next dev",
