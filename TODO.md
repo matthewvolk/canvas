@@ -1,0 +1,3 @@
+- [ ] next-auth
+- [ ] next-intl
+- [ ] Infinite scroll
